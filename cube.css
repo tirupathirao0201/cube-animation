@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .wrapper{
     height: 150px;
     width: 150px;
@@ -17,9 +23,6 @@
 .container{
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     perspective: 800px;
     perspective-origin: 50%;
 }
@@ -34,12 +37,16 @@
     height: 150px;
     transform-style: preserve-3d;
     position: relative;
-    transform: rotateX(-16deg) rotateY(45deg);
-    animation: spin 5s linear 1;
+    transform: rotateY(-90deg);
+    animation: spin 3s linear 1;
+    animation-fill-mode: forwards;
 }
 @keyframes spin {
+    99%{
+        transform: rotateY(0deg);
+    }
     100%{
-        transform: rotateY(-360deg);
+        transform: translateZ(20px);
     }
 }
 .cube div{
@@ -47,6 +54,11 @@
     height: 150px;
     width: 150px;
     position: absolute;
+}
+
+
+.front img {
+    width: 80%;
 }
 .front{
     transform: translateZ(75px);
